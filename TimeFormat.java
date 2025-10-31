@@ -1,17 +1,32 @@
-// Represents the hh:mm time format using an AM/PM format. 
+
+
+    // Converts time from 24-hour format to 12-hour format with AM/PM.
 public class TimeFormat {
 	public static void main(String[] args) {
-		// In Java, the command-line arguments args[0], args[1], ... are represented
-		// each by a string. In this program, the single "hh:mm" input is represented
-		// by the single command-line string argument args[0]. 
-		//   
-		// The following statement handles the hours part of the input.
-		// It concatenates the empty string "" with the leftmost hour-digit. 
-		// It then concatenates the resulting string with the rightmost hour-digit,
-		// and then uses parseInt to cast the resulting string as an int.
-		int hours = Integer.parseInt("" + args[0].charAt(0) + args[0].charAt(1));
-		// Does the same with the minutes part of the input.
-		int minutes = Integer.parseInt("" + args[0].charAt(3) + args[0].charAt(4));
-        // Replace this comment with the rest of your code
+		if (args.length != 2) {
+			return;
+		}
+		int hours = Integer.parseInt(args[0]);
+		int minutes = Integer.parseInt(args[1]);
+
+		 if (hours < 0 || hours > 23 || minutes < 0 || minutes > 59) {
+			System.out.println("Invalid time");
+			return;
+		}
+
+		String period = ("am" / "pm");
+		if (hours == 0) {
+			hours = 12;
+			period = "AM";
+		} else if (hours < 12) {
+			period = "AM";
+		} else if (hours == 12) {
+			period = "PM";
+		} else {  // hours > 12
+			hours = hours - 12;
+			period = "PM";
+		}
+
+		System.out.println(hours + ":" + minutes + " " + period);
 	}
 }
