@@ -3,30 +3,44 @@
     // Converts time from 24-hour format to 12-hour format with AM/PM.
 public class TimeFormat {
 	public static void main(String[] args) {
-		if (args.length != 2) {
-			return;
-		}
-		int hours = Integer.parseInt(args[0]);
-		int minutes = Integer.parseInt(args[1]);
+		
+		int hours = Integer.parseInt("" + args[0].charAt(0) + args[0].charAt(1));
+		int minutes = Integer.parseInt("" + args[0].charAt(3) + args[0].charAt(4));
+		String ampm;
+		int hours24;
+		String minutesStr;
 
-		 if (hours < 0 || hours > 23 || minutes < 0 || minutes > 59) {
-			System.out.println("Invalid time");
-			return;
+		if (hours == 0) 
+		{
+			hours24 = 0;
+			ampm = "AM";
+		} 
+		else if (hours < 12) 
+		{
+			hours24 = hours;
+			ampm = "AM";
 		}
+		 else if (hours == 12) 
+		 {
+			hours24=12; 
+			ampm = "PM";
+		} 
+		else
+		 {
+			hours24 = hours - 12;
+			ampm = "PM";
+		 }
+			if (minutes < 10) 
+			{
+				minutesStr = "0" + minutes;
+			} 
+			else 
+			{
+				minutesStr = String.valueOf(minutes);
+			}
 
-		String period;
-		if (hours == 0) {
-			hours = 12;
-			period = "AM";
-		} else if (hours < 12) {
-			period = "AM";
-		} else if (hours == 12) {
-			period = "PM";
-		} else {  // hours > 12
-			hours = hours - 12;
-			period = "PM";
-		}
+		System.out.println(hours24 + ":" + minutesStr + " " + ampm);
 
-		System.out.println(hours + ":" + minutes + " " + period);
 	}
 }
+
