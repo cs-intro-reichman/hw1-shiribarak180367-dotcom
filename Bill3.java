@@ -1,14 +1,14 @@
 // Splits a restaurant bill evenly among three diners.
 public class Bill3 {
-	public static void main(String[] args) {
 		// To get you started, here is the first line in the program:
-	    String name1 = args[0];
-	    String name2 = args[1];
-		String name3 = args[2];
-		double totalBill = Integer.parseInt(args[3]);
-		double perPerson = Math.ceil ((double)totalBill / 3.0);
-		String message = "dear " + name3 + " " + name2 + " , and " + name1 + ": pay" + perPerson + " Shekels each.";
-        System.out.println(message);
+	   public static void main(String[] args) {
+      String var1 = args[0];
+      String var2 = args[1];
+      String var3 = args[2];
+      int var4 = Integer.parseInt(args[3]);
+      double var5 = Math.ceil((double)var4 / 3.0);
+      String var7 = "dear " + var3 + " " + var2 + " , and " + var1 + ": pay" + var5 + " Shekels each.";
+      System.out.println(var7);
 		
 	}
 }
