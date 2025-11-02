@@ -14,7 +14,7 @@ public class TimeFormat {
 			return;
 		}
 
-		String period = ("am" / "pm");
+		String period;
 		if (hours == 0) {
 			hours = 12;
 			period = "AM";

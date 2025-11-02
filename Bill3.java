@@ -6,8 +6,9 @@ public class Bill3 {
 	    String name2 = args[1];
 		String name3 = args[2];
 		int totalBill = Integer.parseInt(args[3]);
-		double perPerson = Math.ceil (totalBill / 3.0);
+		double perPerson = Math.ceil ((double)totalBill / 3.0);
 		String message = "dear " + name3 + " " + name2 + " , and " + name1 + ": pay" + perPerson + " Shekels each.";
-		System.out.println(message);
+        System.out.println(message);
+		
 	}
 }
