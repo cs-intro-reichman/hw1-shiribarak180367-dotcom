@@ -2,13 +2,12 @@
 public class Bill3 {
 		// To get you started, here is the first line in the program:
 	   public static void main(String[] args) {
-      String var1 = args[0];
-      String var2 = args[1];
-      String var3 = args[2];
-      int var4 = Integer.parseInt(args[3]);
-      double var5 = Math.ceil((double)var4 / 3.0);
-      String var7 = "dear " + var3 + ", " + var2 + ", and " + var1 + ": pay " + var5 + " Shekels each.";
-      System.out.println(var7);
-		
+      String name1 = args[0];
+      String name2 = args[1];
+      String name3 = args[2];
+      int total = Integer.parseInt(args[3]);
+      double perPerson = Math.ceil(total / 3.0);
+      System.out.println("Dear " + name3 + ", " + name2 + ", and " + name1 + ": pay " + perPerson + " Shekels each.");
+
 	}
 }
